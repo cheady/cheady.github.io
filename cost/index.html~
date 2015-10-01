@@ -3,9 +3,33 @@
 {% block content %}
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome to your new project!</h1>
-    <p>Replace this message with your own content in <code>{{ PROJECT_PATH }}/index.html</code>.</p>
-    <p>Learn more on the <a href="_example.html">example page</a>.</p>
+    <h1>{{ headline }}</h1>
+    <p> {{ deck }} </p>
+	<p><img src="chart.png" atl="Chart" height="75%" width="75%"</p>
+<p>{{ story }} </p>
+ <h2 class="sub-header">In-state vs. Out-of-State</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+		  <th>Year</td>
+                  <th>In-State-Cost</th>
+                  <th>Out-of-State-Cost</th>
+                </tr>
+              </thead>
+		{% for row in data %}
+              <tbody>
+                <tr>
+		  <td>{{ row.year }}</td>
+                  <td>${{ row.in }}</td>
+                  <td>${{ row.out }}</td>
+                      </tr>
+		</tbody>
+      		{% endfor %}	
+	</table>
+	</div>	
+
+    <p>Learn more on the <a href="dailynebraskan.com">Daily Nebraskan</a>.</p>
   </div>
 </div>
 {% endblock content %}
